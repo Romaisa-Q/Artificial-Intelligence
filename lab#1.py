@@ -10,4 +10,22 @@ x_new = np.array([150]).reshape((-1,1)) #reshape((-1,1)) neccesssary bcz compute
 y_new = modle.predict(x_new)
 print(y_new) #output
 
+import sklearn
+import numpy as np
+import pandas as pd
+from sklearn import linear_model
+
+df = pd.read_excel("data.xlsx")
+x = df[["hours"]]
+y = df[["score"]]
+
+model = linear_model.LinearRegression()
+model.fit(x, y)
+
+x_new = np.array([[40]])
+y_new = model.predict(x_new)
+
+print(y_new)
+
+
 
